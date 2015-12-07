@@ -112,101 +112,101 @@ Calendar cal = Calendar.getInstance();
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int position;
-        String[] dateRegister;
-       
-       
-        if( jCheckBox1.isSelected())
-        {
-           
-            list.add("SE 46A");
-            String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-        if( jCheckBox2.isSelected())
-        {
-            list.add("SE 46B");
-            String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-        if( jCheckBox3.isSelected())
-        {
-            list.add("SE 131");
-            String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-        if( jCheckBox4.isSelected())
-        {
-            list.add("SE 133");
-            String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-        if( jCheckBox5.isSelected())
-        {
-            list.add("SE 165");
-            String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-        if( jCheckBox6.isSelected())
-        {
-            list.add("SE 185");
-            String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-           
-        }
-        if( jCheckBox7.isSelected())
-        {
-            list.add("SE 148");
-            String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-        if( jCheckBox8.isSelected())
-        {
-            list.add("SE 149");
-             String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-       if( jCheckBox9.isSelected())
-        {
-            list.add("SE 120");
-            String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-       if( jCheckBox10.isSelected())
-        {
-            list.add("SE 166");
-             String date = dateFormat.format(cal.getTime());
-            dateList.add(date);
-            
-        }
-       if( list.size() > 4)
-       {
-           JOptionPane.showMessageDialog(null, "You cannot take more than 4 classes!", 
-                   "InfoBox: Error" + "Registration Class", JOptionPane.INFORMATION_MESSAGE);
-           list.clear();
-           dateList.clear();
-       }else if(list.size() == 0)
-       {
-           JOptionPane.showMessageDialog(null, "Choos a class to register!", 
-                   "InfoBox: Error" + "Registration Class", JOptionPane.INFORMATION_MESSAGE);
-       }
-       else {
-        String[] arrayObjectClass =(String[]) list.toArray(new String[list.size()]);
-        String[] arrayObjectDate = (String[]) dateList.toArray(new String[list.size()]);
-        AnyMedia log = new AnyMedia();
-        AnyMedia.ListClass.setListData(arrayObjectClass);
-        AnyMedia.ListDate.setListData(arrayObjectDate);
-         this.setVisible(false);
-        log.setVisible(true);
-       }
+//        int position;
+//        String[] dateRegister;
+//       
+//       
+//        if( jCheckBox1.isSelected())
+//        {
+//           
+//            list.add("SE 46A");
+//            String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//        if( jCheckBox2.isSelected())
+//        {
+//            list.add("SE 46B");
+//            String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//        if( jCheckBox3.isSelected())
+//        {
+//            list.add("SE 131");
+//            String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//        if( jCheckBox4.isSelected())
+//        {
+//            list.add("SE 133");
+//            String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//        if( jCheckBox5.isSelected())
+//        {
+//            list.add("SE 165");
+//            String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//        if( jCheckBox6.isSelected())
+//        {
+//            list.add("SE 185");
+//            String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//           
+//        }
+//        if( jCheckBox7.isSelected())
+//        {
+//            list.add("SE 148");
+//            String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//        if( jCheckBox8.isSelected())
+//        {
+//            list.add("SE 149");
+//             String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//       if( jCheckBox9.isSelected())
+//        {
+//            list.add("SE 120");
+//            String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//       if( jCheckBox10.isSelected())
+//        {
+//            list.add("SE 166");
+//             String date = dateFormat.format(cal.getTime());
+//            dateList.add(date);
+//            
+//        }
+//       if( list.size() > 4)
+//       {
+//           JOptionPane.showMessageDialog(null, "You cannot take more than 4 classes!", 
+//                   "InfoBox: Error" + "Registration Class", JOptionPane.INFORMATION_MESSAGE);
+//           list.clear();
+//           dateList.clear();
+//       }else if(list.size() == 0)
+//       {
+//           JOptionPane.showMessageDialog(null, "Choos a class to register!", 
+//                   "InfoBox: Error" + "Registration Class", JOptionPane.INFORMATION_MESSAGE);
+//       }
+//       else {
+//        String[] arrayObjectClass =(String[]) list.toArray(new String[list.size()]);
+//        String[] arrayObjectDate = (String[]) dateList.toArray(new String[list.size()]);
+//        AnyMedia log = new AnyMedia();
+//        AnyMedia.ListClass.setListData(arrayObjectClass);
+//        AnyMedia.ListDate.setListData(arrayObjectDate);
+//         this.setVisible(false);
+//        log.setVisible(true);
+//       }
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

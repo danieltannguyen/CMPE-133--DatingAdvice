@@ -85,25 +85,28 @@ public class ViewAdvising extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int position = jList2.getSelectedIndex();
-        if(position == 5)
-        {
-             this.setVisible(false);
-        List list = new List();
-        list.setVisible(true);
-        jLabel3.setText(Integer.toString(position));
-        }
-        else if(jList2.getSelectedIndex() >10 || jList2.getSelectedIndex() <0)
-        {
-            JOptionPane.showMessageDialog(null, "Please choose a major in the list!", 
-                    "InfoBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else JOptionPane.showMessageDialog(null, "Classes are not listed yet", 
-                "InfoBox: " + "List Of Classes", JOptionPane.INFORMATION_MESSAGE);
+//        int position = jList2.getSelectedIndex();
+//        if(position == 5)
+//        {
+//             this.setVisible(false);
+//        List list = new List();
+//        list.setVisible(true);
+//        jLabel3.setText(Integer.toString(position));
+//        }
+//        else if(jList2.getSelectedIndex() >10 || jList2.getSelectedIndex() <0)
+//        {
+//            JOptionPane.showMessageDialog(null, "Please choose a major in the list!", 
+//                    "InfoBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
+//        }
+//        else JOptionPane.showMessageDialog(null, "Classes are not listed yet", 
+//                "InfoBox: " + "List Of Classes", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        List list = new List();
+        list.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

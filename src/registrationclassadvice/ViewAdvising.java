@@ -92,6 +92,10 @@ public class ViewAdvising extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AdviceRequest request = new AdviceRequest(posts);
+        request.setVisible(true);
+        this.setVisible(false);
+        
 //        int position = jList2.getSelectedIndex();
 //        if(position == 5)
 //        {

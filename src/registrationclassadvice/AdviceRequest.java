@@ -5,16 +5,21 @@
  */
 package registrationclassadvice;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author hen
  */
 public class AdviceRequest extends javax.swing.JFrame {
+    
+    ArrayList<Evidence> posts;
 
     /**
      * Creates new form AdviceRequest
      */
-    public AdviceRequest() {
+    public AdviceRequest(ArrayList<Evidence> posts) {
+        this.posts = posts;
         initComponents();
     }
 
@@ -37,6 +42,11 @@ public class AdviceRequest extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Request Advice");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -85,6 +95,14 @@ public class AdviceRequest extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        posts.add(new Evidence(new Poster(jTextField1.getText()), jTextArea1.getText()));
+        List list = new List(posts);
+        list.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -115,7 +133,7 @@ public class AdviceRequest extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdviceRequest().setVisible(true);
+                new AdviceRequest(null).setVisible(true);
             }
         });
     }

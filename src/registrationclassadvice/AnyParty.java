@@ -4,7 +4,7 @@ package registrationclassadvice;
 //	that gives them ownership to many things.
 public class AnyParty {
 	
-	private String name;
+	public String name;
 	private String ID;
 	private String email;
 	private String status;

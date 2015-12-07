@@ -19,11 +19,20 @@ import javax.swing.JOptionPane;
  */
 public class List extends javax.swing.JFrame {
 
+    ArrayList<Evidence> posts;
+    
     /**
      * Creates new form List
      */
-    public List() {
+    public List(ArrayList<Evidence> posts) {
+        this.posts = posts;
         initComponents();
+        
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            public int getSize() { return posts.size(); }
+            public String getElementAt(int i) { return posts.get(i).poster.name + " - " + posts.get(i).post; }
+        });
+        
     }
 
     /**
@@ -35,7 +44,6 @@ public class List extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -45,13 +53,6 @@ public class List extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 204, 255));
         setForeground(new java.awt.Color(153, 255, 153));
         setIconImages(null);
-
-        jButton1.setLabel("Reply");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -78,10 +79,7 @@ public class List extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(282, 282, 282)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
+                    .addComponent(jButton2)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane1)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)))
@@ -95,9 +93,7 @@ public class List extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addComponent(jButton2)
                 .addGap(97, 97, 97))
         );
 
@@ -110,105 +106,6 @@ Calendar cal = Calendar.getInstance();
  ArrayList dateList = new ArrayList();
  String dateTime[] ;
 
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        int position;
-//        String[] dateRegister;
-//       
-//       
-//        if( jCheckBox1.isSelected())
-//        {
-//           
-//            list.add("SE 46A");
-//            String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//        if( jCheckBox2.isSelected())
-//        {
-//            list.add("SE 46B");
-//            String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//        if( jCheckBox3.isSelected())
-//        {
-//            list.add("SE 131");
-//            String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//        if( jCheckBox4.isSelected())
-//        {
-//            list.add("SE 133");
-//            String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//        if( jCheckBox5.isSelected())
-//        {
-//            list.add("SE 165");
-//            String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//        if( jCheckBox6.isSelected())
-//        {
-//            list.add("SE 185");
-//            String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//           
-//        }
-//        if( jCheckBox7.isSelected())
-//        {
-//            list.add("SE 148");
-//            String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//        if( jCheckBox8.isSelected())
-//        {
-//            list.add("SE 149");
-//             String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//       if( jCheckBox9.isSelected())
-//        {
-//            list.add("SE 120");
-//            String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//       if( jCheckBox10.isSelected())
-//        {
-//            list.add("SE 166");
-//             String date = dateFormat.format(cal.getTime());
-//            dateList.add(date);
-//            
-//        }
-//       if( list.size() > 4)
-//       {
-//           JOptionPane.showMessageDialog(null, "You cannot take more than 4 classes!", 
-//                   "InfoBox: Error" + "Registration Class", JOptionPane.INFORMATION_MESSAGE);
-//           list.clear();
-//           dateList.clear();
-//       }else if(list.size() == 0)
-//       {
-//           JOptionPane.showMessageDialog(null, "Choos a class to register!", 
-//                   "InfoBox: Error" + "Registration Class", JOptionPane.INFORMATION_MESSAGE);
-//       }
-//       else {
-//        String[] arrayObjectClass =(String[]) list.toArray(new String[list.size()]);
-//        String[] arrayObjectDate = (String[]) dateList.toArray(new String[list.size()]);
-//        AnyMedia log = new AnyMedia();
-//        AnyMedia.ListClass.setListData(arrayObjectClass);
-//        AnyMedia.ListDate.setListData(arrayObjectDate);
-//         this.setVisible(false);
-//        log.setVisible(true);
-//       }
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -245,13 +142,12 @@ Calendar cal = Calendar.getInstance();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new List().setVisible(true);
+                new List(null).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;

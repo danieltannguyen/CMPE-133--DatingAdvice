@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package registrationclassadvice;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
  *
@@ -11,11 +12,17 @@ import javax.swing.JOptionPane;
  */
 public class ViewAdvising extends javax.swing.JFrame {
 
+    ArrayList<Evidence> posts = new ArrayList<>();
+
     /**
      * Creates new form ViewAdvising
      */
     public ViewAdvising() {
         initComponents();
+        
+        posts.add(new Evidence(new Poster("Henry"), "Help! I need dating advice!"));
+        posts.add(new Evidence(new Poster("Daniel"), "I need dating advice too."));
+        posts.add(new Evidence(new Poster("Anh"), "I am in need dating advice..."));
     }
 
     /**
@@ -104,7 +111,7 @@ public class ViewAdvising extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        List list = new List();
+        List list = new List(posts);
         list.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed

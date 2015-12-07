@@ -9,10 +9,10 @@ package registrationclassadvice;
  * @author Daniel Nguyen
  */
 public class Poster extends AnyParty{
-	private String studentName;
-	private String studentID;
-	private String studentEmail;
-	private String studentStatus;
+	private String posterName;
+	private String posterID;
+	private String posterEmail;
+	private String posterStatus;
 	boolean Evidence;
 
     public Poster(String name) {

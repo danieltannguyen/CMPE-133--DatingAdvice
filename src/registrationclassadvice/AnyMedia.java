@@ -6,6 +6,7 @@
 package registrationclassadvice;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -15,12 +16,23 @@ import java.util.Calendar;
 public class AnyMedia extends javax.swing.JFrame {
 
     static Object jLable4;
+    
+    ArrayList<Evidence> posts;
+    Evidence post;
 
     /**
      * Creates new form Log
      */
-    public AnyMedia() {
+    public AnyMedia(ArrayList<Evidence>posts, Evidence post) {
+        this.posts = posts;
+        this.post = post;
         initComponents();
+        jLabel1.setText(post.poster.name + " - " + post.post);
+        
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            public int getSize() { return post.replies.size(); }
+            public String getElementAt(int i) { return post.replies.get(i).poster.name + " - " + post.replies.get(i).post; }
+        });
     }
 
     /**
@@ -58,6 +70,11 @@ public class AnyMedia extends javax.swing.JFrame {
 
         jButton2.setText("< Back");
         jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -89,6 +106,11 @@ public class AnyMedia extends javax.swing.JFrame {
         );
 
         jButton1.setText("Reply");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel5.setText("Reply Here");
@@ -125,6 +147,22 @@ public class AnyMedia extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        post.replies.add(new Evidence(new Poster("Anonymous"), jTextField1.getText()));
+        jTextField1.setText("");
+        
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            public int getSize() { return post.replies.size(); }
+            public String getElementAt(int i) { return post.replies.get(i).poster.name + " - " + post.replies.get(i).post; }
+        });
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        List list = new List(posts);
+        list.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
     public static void dateTime()
     {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
@@ -162,7 +200,7 @@ public class AnyMedia extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AnyMedia().setVisible(true);
+                new AnyMedia(null, null).setVisible(true);
             }
         });
     }

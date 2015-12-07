@@ -14,6 +14,11 @@ public class ViewAdvising extends javax.swing.JFrame {
 
     ArrayList<Evidence> posts = new ArrayList<>();
 
+    public ViewAdvising(ArrayList<Evidence> posts) {
+        initComponents();
+        
+        this.posts = posts;
+    }
     /**
      * Creates new form ViewAdvising
      */
